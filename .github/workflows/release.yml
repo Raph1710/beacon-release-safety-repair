@@ -13,7 +13,8 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest -v
   production:
-    runs-on: ubuntu-latest
+    needs: validate
+    runs-on: ubuntu
     environment: production
     steps:
       - name: Review only, no deployment
